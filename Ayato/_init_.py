@@ -16,12 +16,18 @@ from config import (
     API_HASH,
     API_ID,
     BOTLOG_CHATID,
+    BOT_TOKEN,
     DB_URL,
     STRING_SESSION1,
     STRING_SESSION2,
     STRING_SESSION3,
     STRING_SESSION4,
     STRING_SESSION5,
+    STRING_SESSION6,
+    STRING_SESSION7,
+    STRING_SESSION8,
+    STRING_SESSION9,
+    STRING_SESSION10,
     SUDO_USERS,
 )
 
@@ -55,6 +61,11 @@ if (
     and not STRING_SESSION3
     and not STRING_SESSION4
     and not STRING_SESSION5
+    and not STRING_SESSION6
+    and not STRING_SESSION7
+    and not STRING_SESSION8
+    and not STRING_SESSION9
+    and not STRING_SESSION10
 ):
     LOGGER(__name__).error("No String Session Found! Exiting!")
     sys.exit()
@@ -79,6 +90,8 @@ trl = Translator()
 aiosession = ClientSession()
 
 CMD_HELP = {}
+clients = []
+ids = []
 
 scheduler = AsyncIOScheduler()
 
@@ -90,6 +103,14 @@ TEMP_SETTINGS: Dict[Any, Any] = {}
 TEMP_SETTINGS["PM_COUNT"] = {}
 TEMP_SETTINGS["PM_LAST_MSG"] = {}
 
+app = Client(
+    name="app",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="Ayato/modules/bot"),
+    in_memory=True,
+)
 
 bot1 = (
     Client(
@@ -151,9 +172,71 @@ bot5 = (
     else None
 )
 
+bot6 = (
+    Client(
+        name="bot6",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=STRING_SESSION6,
+        plugins=dict(root="Ayato/modules"),
+    )
+    if STRING_SESSION6
+    else None
+)
 
-bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5] if bot]
+bot7 = (
+    Client(
+        name="bot7",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=STRING_SESSION7,
+        plugins=dict(root="Ayato/modules"),
+    )
+    if STRING_SESSION7
+    else None
+)
+
+bot8 = (
+    Client(
+        name="bot8",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=STRING_SESSION8,
+        plugins=dict(root="Ayato/modules"),
+    )
+    if STRING_SESSION8
+    else None
+)
+
+bot9 = (
+    Client(
+        name="bot9",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=STRING_SESSION9,
+        plugins=dict(root="Ayato/modules"),
+    )
+    if STRING_SESSION9
+    else None
+)
+
+bot10 = (
+    Client(
+        name="bot10",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=STRING_SESSION10,
+        plugins=dict(root="Ayato/modules"),
+    )
+    if STRING_SESSION10
+    else None
+)
+
+bots = [bot for bot in [bot1, bot2, bot3, bot4, bot5, bot6, bot7, bot8, bot9, bot10] if bot]
 
 for bot in bots:
     if not hasattr(bot, "group_call"):
         setattr(bot, "group_call", GroupCallFactory(bot).get_group_call())
+
+
+# null
