@@ -10,11 +10,11 @@ from Ayato.modules import ALL_MODULES
 
 MSG_ON = """
 🐻‍❄️ **KAMPANG-UserBot Menyala** 🐻‍❄️
-━───────╯⇕╰───────━
+____________________________
 🐻‍❄️ **Userbot Version -** `{}`
 🐻‍❄️ prefixes: ? ! , . *
 🐻‍❄️ **Ketik** `{}KAMPANG` **untuk Mengecheck Bot**
-━───────╮⇕╭───────━
+____________________________
 """
 
 async def main():
