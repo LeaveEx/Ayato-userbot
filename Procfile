@@ -1,1 +1,1 @@
-worker: python3 -m Ayato
+worker: bash start
