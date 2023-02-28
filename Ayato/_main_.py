@@ -20,28 +20,29 @@ MSG_ON = """
 
 async def main():
     await app.start()
-    print("LOG: Founded Bot token Booting..")
+    LOGGER("Geez").info("Memulai Geez Pyro..")
+    LOGGER("Geez").info("Loading Everything.")
     for all_module in ALL_MODULES:
-        importlib.import_module("Ayato.modules" + all_module)
-        print(f"Successfully Imported {all_module} ")
+        importlib.import_module("Geez.modules" + all_module)
     for bot in bots:
         try:
             await bot.start()
             ex = await bot.get_me()
-            await join(bot)
+            await logging(bot)
             try:
-                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER))
-            except BaseException:
-                pass
-            print(f"Started as {ex.first_name} | {ex.id} ")
+                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, gver, CMD_HNDLR))
+            except BaseException as a:
+                LOGGER("Geez").warning(f"{a}")
+            LOGGER("Geez").info("Startup Completed")
+            LOGGER("Geez").info(f"Started as {ex.first_name} | {ex.id} ")
             ids.append(ex.id)
         except Exception as e:
-            print(f"{e}")
+            LOGGER("Geez").info(f"{e}")
     await idle()
     await aiosession.close()
 
 
-if __name__ == "_main_":
-    LOGGER("Ayato").info("Ayato Telah Hidup")
+if __name__ == "__main__":
+    LOGGER("Geez").info("Starting Geez Pyro Userbot")
     install()
     LOOP.run_until_complete(main())
