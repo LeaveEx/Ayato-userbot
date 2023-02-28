@@ -41,7 +41,7 @@ async def main():
     await aiosession.close()
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     LOGGER("Ayato").info("Ayato Telah Hidup")
     install()
     LOOP.run_until_complete(main())
