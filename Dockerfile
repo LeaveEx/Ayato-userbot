@@ -7,4 +7,4 @@ RUN python3 -m pip install SomePackage
 COPY . /app/
 WORKDIR /app/
 RUN pip3 install -U -r requirements.txt
-CMD ["bash","start.sh"]
+CMD bash start
