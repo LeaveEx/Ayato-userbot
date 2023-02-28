@@ -1,48 +1,54 @@
-import importlib
+import time
+import importlib 
 from pyrogram import idle
 from uvloop import install
 
-
+from config import BOT_VER, CMD_HANDLER
+from Ayato import BOTLOG_CHATID, LOGGER, LOOP, aiosession, bot1, bots, app, ids
+from Ayato.split.misc import create_botlog, git, heroku
 from Ayato.modules import ALL_MODULES
-from Ayato import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, bots, ids
-from Ayato.modules.basic import join
 
-BOT_VER = "0.1.0"
-CMD_HANDLER = ["." "," "?" "!"]
 MSG_ON = """
-🐻‍❄️ **PyroKar Telah Hidup** 🐻‍❄️
-╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
-❍▹ **Userbot Version -** `{}`
-❍▹ **Ketik** `{}alive` **untuk Mengecek Bot**
-╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
+🔥 **RamPyro-Bot Menyala** 🔥
+━───────╯⇕╰───────━
+🤖 **Userbot Version -** `{}`
+⚜️ prefixes: ? ! , . *
+⌨️ **Ketik** `{}rama` **untuk Mengecheck Bot**
+━───────╮⇕╭───────━
 """
-
 
 async def main():
     await app.start()
-    LOGGER("Geez").info("Memulai Geez Pyro..")
-    LOGGER("Geez").info("Loading Everything.")
     for all_module in ALL_MODULES:
-        importlib.import_module("Geez.modules" + all_module)
+        importlib.import_module(f"rams.modules.{all_module}")
     for bot in bots:
         try:
             await bot.start()
-            ex = await bot.get_me()
-            await logging(bot)
+            bot.me = await bot.get_me()
+            await bot.join_chat("geezram")
+            await bot.join_chat("userbotch")
+            await bot.join_chat("GeezSupport")
+            ids.append(bot.me.id)
             try:
-                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, gver, CMD_HNDLR))
-            except BaseException as a:
-                LOGGER("Geez").warning(f"{a}")
-            LOGGER("Geez").info("Startup Completed")
-            LOGGER("Geez").info(f"Started as {ex.first_name} | {ex.id} ")
-            ids.append(ex.id)
-        except Exception as e:
-            LOGGER("Geez").info(f"{e}")
+                await bot.send_message(
+                    BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
+                )
+            except BaseException:
+                pass
+            LOGGER("Ayato").info(
+                f"Logged in as {bot.me.first_name} | [ {bot.me.id} ]"
+            )
+        except Exception as a:
+            LOGGER("main").warning(a)
+    LOGGER("Ayato").info(f"RamPyro-Bot v{BOT_VER} [🔥 UDAH AKTIF NGENTOT! 🔥]")
+    if not str(BOTLOG_CHATID).startswith("-100"):
+        await create_botlog(bot1)
     await idle()
     await aiosession.close()
 
 
 if __name__ == "__main__":
-    LOGGER("Geez").info("Starting Geez Pyro Userbot")
+    LOGGER("Ayato").info("Starting RamPyro-Bot")
     install()
+    heroku()
     LOOP.run_until_complete(main())
