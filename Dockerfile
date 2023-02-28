@@ -1,10 +1,9 @@
 FROM python:3.9.7-slim-buster
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install git curl python3-pip ffmpeg -y
-RUN pip3 install -U pip
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install SomePackage
-COPY . /app/
-WORKDIR /app/
-RUN pip3 install -U -r requirements.txt
+
+RUN git clone -b main https://github.com/LeaveEx/Ayato-userbot /home/Ayato/
+WORKDIR /home/rams
+
+RUN wget https://raw.githubusercontent.com/LeaveEx/Ayato-userbot/main/requirements.txt \
+    && pip3 install --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt \
+    && rm requirements.txt
 CMD bash start
