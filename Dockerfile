@@ -1,9 +1,9 @@
-FROM python:3.9.7-slim-buster
+FROM hitokizzy/geezram:slim-buster
 
-RUN git clone -b main https://github.com/LeaveEx/Ayato-userbot /home/Ayato/
-WORKDIR /home/Ayato
+RUN git clone -b main https://github.com/geezrampy/ram-Pyro /home/rams/
+WORKDIR /home/rams
 
-RUN wget https://raw.githubusercontent.com/LeaveEx/Ayato-userbot/main/requirements.txt \
+RUN wget https://raw.githubusercontent.com/Geezrampy/ram-Pyro/main/requirements.txt \
     && pip3 install --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt \
     && rm requirements.txt
 CMD bash start
