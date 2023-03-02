@@ -8,12 +8,11 @@ from Ayato.helpers.misc import create_botlog, git, heroku
 from Ayato.modules import ALL_MODULES
 
 MSG_ON = """
-🔥 **RamPyro-Bot Menyala** 🔥
-━───────╯⇕╰───────━
+🐻‍❄️ **AyatoPyro-Bot Menyala** 🐻‍❄️
+:_-____________________-_:
 🤖 **Userbot Version -** `{}`
-⚜️ prefixes: ? ! , . *
-⌨️ **Ketik** `{}rama` **untuk Mengecheck Bot**
-━───────╮⇕╭───────━
+⌨️ **Ketik** `{}alive` **untuk Mengecheck Bot**
+:_-____________________-_:
 """
 
 async def main():
@@ -47,7 +46,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    LOGGER("Ayato").info("Starting RamPyro-Bot")
+    LOGGER("Ayato").info("Starting AyatoPyro-Bot")
     install()
     heroku()
     LOOP.run_until_complete(main())
