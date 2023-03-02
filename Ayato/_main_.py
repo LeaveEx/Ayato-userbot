@@ -40,5 +40,7 @@ async def main():
     await idle()
     await aiosession.close()
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+if __name__ == "__main__":
+    LOGGER("Ayato").info("Ayato Telah Hidup")
+    install()
+    LOOP.run_until_complete(main())
