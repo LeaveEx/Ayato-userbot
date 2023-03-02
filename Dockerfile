@@ -1,9 +1,9 @@
-FROM hitokizzy/geezram:slim-buster
-
-RUN git clone -b main https://github.com/geezrampy/ram-Pyro /home/rams/
-WORKDIR /home/rams
-
-RUN wget https://raw.githubusercontent.com/Geezrampy/ram-Pyro/main/requirements.txt \
-    && pip3 install --no-cache-dir --use-deprecated=legacy-resolver -r requirements.txt \
-    && rm requirements.txt
-CMD bash start
+FROM python:3.9.7-slim-buster
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
+RUN python3 -m pip install --upgrade pip
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install -U -r requirements.txt
+CMD ["bash","start"]
