@@ -11,7 +11,7 @@ from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
 
 from config import CMD_HANDLER as cmd
-from PyroKar import *
+from Ayato import *
 from Ayato.helpers.adminHelpers import DEVS, WHITELIST
 from Ayato.helpers.basic import edit_or_reply
 from Ayato.helpers.PyroHelpers import get_ub_chats
