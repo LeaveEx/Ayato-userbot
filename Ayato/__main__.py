@@ -8,7 +8,7 @@ from Ayato.helpers.misc import create_botlog, git, heroku
 from Ayato.modules import ALL_MODULES
 
 MSG_ON = """
-🐻‍❄️ **AyatoPyro-Bot Menyala** 🐻‍❄️
+ **AyatoPyro-Bot Menyala**
 :_-____________________-_:
 🤖 **Userbot Version -** `{}`
 ⌨️ **Ketik** `{}alive` **untuk Mengecheck Bot**
