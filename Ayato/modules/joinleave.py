@@ -13,7 +13,7 @@ from pyrogram.types import Message
 from Ayato.helpers.adminHelpers import DEVS
 from config import BLACKLIST_CHAT
 from config import CMD_HANDLER as cmd
-from Ayator.helpers.basic import edit_or_reply
+from Ayato.helpers.basic import edit_or_reply
 
 from .help import add_command_help
 
