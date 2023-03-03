@@ -1,4 +1,4 @@
-from PyroKar import app
+from Ayato import app
 from pyrogram import filters
 
 
