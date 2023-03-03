@@ -18,7 +18,7 @@ class First:
 🐻‍❄️ **Repo :** [KAMPANG-Userbot](https://github.com/LeaveEx)
     CREATOR = 'I was created by my master <a href="https://github.com/LeaveEx">Man</a> on a rainy day.'
     MSG_ON = """
-🔥 **KAMPANG-Userbot Berhasil Di Aktifkan**
+   **KAMPANG-Userbot Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}`
 ➠ **Ketik** `{}alive` **untuk Mengecheck Bot**
