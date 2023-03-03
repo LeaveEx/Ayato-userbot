@@ -1,52 +1,47 @@
-import importlib 
+import importlib
 from pyrogram import idle
 from uvloop import install
 
-from config import BOT_VER, CMD_HANDLER
-from Ayato import BOTLOG_CHATID, LOGGER, LOOP, aiosession, bot1, bots, app, ids
-from Ayato.helpers.misc import create_botlog, git, heroku
-from Ayato.modules import ALL_MODULES
 
+from Ayato.modules import ALL_MODULES
+from Ayato import BOTLOG_CHATID, LOGGER, LOOP, aiosession, app, bots, ids
+from Ayato.modules.basic import join
+
+BOT_VER = "0.1.0"
+CMD_HANDLER = ["." "," "?" "!"]
 MSG_ON = """
- **AyatoPyro-Bot Menyala**
-:_-____________________-_:
-🤖 **Userbot Version -** `{}`
-⌨️ **Ketik** `{}alive` **untuk Mengecheck Bot**
-:_-____________________-_:
+💢 **Ayato Telah Hidup** 💢
+╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
+❍▹ **Userbot Version -** `{}`
+❍▹ **Ketik** `{}alive` **untuk Mengecek Bot**
+╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 """
+
 
 async def main():
     await app.start()
+    print("LOG: Founded Bot token Booting..")
     for all_module in ALL_MODULES:
-        importlib.import_module(f"Ayato.modules.{all_module}")
+        importlib.import_module("Ayato.modules" + all_module)
+        print(f"Successfully Imported {all_module} ")
     for bot in bots:
         try:
             await bot.start()
-            bot.me = await bot.get_me()
-            await bot.join_chat("idealizerd")
-            await bot.join_chat("senzusupp")
-            await bot.join_chat("themusicLD")
-            ids.append(bot.me.id)
+            ex = await bot.get_me()
+            await join(bot)
             try:
-                await bot.send_message(
-                    BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER)
-                )
+                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER))
             except BaseException:
                 pass
-            LOGGER("Ayato").info(
-                f"Logged in as {bot.me.first_name} | [ {bot.me.id} ]"
-            )
-        except Exception as a:
-            LOGGER("main").warning(a)
-    LOGGER("Ayato").info(f"AyatoPyro-Bot v{BOT_VER} [🔥 UDAH AKTIF NGENTOT! 🔥]")
-    if not str(BOTLOG_CHATID).startswith("-100"):
-        await create_botlog(bot1)
+            print(f"Started as {ex.first_name} | {ex.id} ")
+            ids.append(ex.id)
+        except Exception as e:
+            print(f"{e}")
     await idle()
     await aiosession.close()
 
 
 if __name__ == "__main__":
-    LOGGER("Ayato").info("Starting AyatoPyro-Bot")
+    LOGGER("Ayato").info("Ayato Telah Hidup")
     install()
-    heroku()
     LOOP.run_until_complete(main())
