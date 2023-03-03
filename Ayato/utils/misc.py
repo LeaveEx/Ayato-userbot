@@ -41,7 +41,7 @@ async def paste_queue(content):
 
 
 def restart():
-    os.execvp(sys.executable, [sys.executable, "-m", "PyroKar"])
+    os.execvp(sys.executable, [sys.executable, "-m", "Ayato"])
 
 
 async def list_admins(client: Client, chat_id: int):
