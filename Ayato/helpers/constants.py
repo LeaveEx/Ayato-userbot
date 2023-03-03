@@ -7,18 +7,20 @@
 #
 # t.me/SharingUserbot & t.me/Lunatic0de
 
+
 class First:
-    ALIVE = "`Still Working On Fire 🐻‍❄️`"
+    ALIVE = "`Still Working On Fire 🔥`"
     REPO = """
-**Hey**, __I am using__ 🐻‍❄️ **KAMPANG-Userbot** 🐻‍❄️
-🐻‍❄️ **Userbot Version :** `{}`
-🐻‍❄️ **Group Support :** [AYATO SUPPORT](t.me/senzusupp)
-🐻‍❄️ **Channel :** [AYATO PROJECT](t.me/idealizerd)
-🐻‍❄️ **Owner Repo :** [Leave](t.me/itsmeleave)
-🐻‍❄️ **Repo :** [KAMPANG-Userbot](https://github.com/LeaveEx)
-    CREATOR = 'I was created by my master <a href="https://github.com/LeaveEx">Man</a> on a rainy day.'
+**Hey**, __I am using__ 🔥 **Kampang-Userbot** 🔥
+      __Thanks For Using me__
+✣ **Userbot Version :** `{}`
+✣ **Group Support :** [GRUP SUPPORT](t.me/senzusupp)
+✣ **Channel :** [Support](t.me/idealizerd)
+✣ **Owner Repo :** [LeaveEx](t.me/istmeleave)
+✣ **Repo :** [Kampang-Userbot](https://github.com/LeaveEx/Ayato-userbot)"""
+    CREATOR = 'I was created by my master <a href="https://github.com/LeaveEx/Ayato-Userbot">Leave</a> on a rainy day.'
     MSG_ON = """
-   **KAMPANG-Userbot Berhasil Di Aktifkan**
+🔥 **Kampang-Userbot Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}`
 ➠ **Ketik** `{}alive` **untuk Mengecheck Bot**
