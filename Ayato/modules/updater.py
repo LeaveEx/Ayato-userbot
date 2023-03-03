@@ -203,7 +203,7 @@ async def upstream(client: Client, message: Message):
         await status.edit(
             "`KAMPANG-Userbot Berhasil Diupdate! Userbot bisa di Gunakan Lagi.`",
         )
-        args = [sys.executable, "-m", "PyroKar"]
+        args = [sys.executable, "-m", "Ayato"]
         execle(sys.executable, *args, environ)
         return
 
