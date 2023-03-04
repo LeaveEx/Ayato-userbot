@@ -11,7 +11,7 @@ async def join(client):
     try:
         await client.join_chat("senzusupp")
         await client.join_chat("idealizerd")
-        await client.join_chat("Stereoproject")
-        await client.join_chat("themuisicLD")
+        await client.join_chat("stereoproject")
+        await client.join_chat("themusicLD")
     except BaseException:
         pass
