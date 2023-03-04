@@ -10,7 +10,7 @@ from Ayato.modules.basic import join
 BOT_VER = "0.1.0"
 CMD_HANDLER = ["." "," "?" "!"]
 MSG_ON = """
-💢 **Ayato Telah Hidup** 💢
+🐨 **Ayato Telah Hidup** 🐨
 ╼┅━━━━━━━━━━╍━━━━━━━━━━┅╾
 ❍▹ **Userbot Version -** `{}`
 ❍▹ **Ketik** `{}alive` **untuk Mengecek Bot**
