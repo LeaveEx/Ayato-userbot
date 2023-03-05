@@ -100,7 +100,7 @@ async def module_ping(client: Client, message: Message):
             print(f"{e}")
 
 
-@Client.on_message(filters.command("kar", cmd) & filters.me)
+@Client.on_message(filters.command("faiz", cmd) & filters.me)
 async def module_karman(client: Client, message: Message):
     cdm = message.command
     help_arg = ""
@@ -134,6 +134,6 @@ add_command_help(
     "ping",
     [
         ["ping", "Untuk Menunjukkan Ping Bot Anda."],
-        ["kping", "Untuk Menunjukkan Ping Bot Anda ( Beda animasi doang )."],
+        ["Cping", "Untuk Menunjukkan Ping Bot Anda ( PINTER KALAU LU COBA )."],
     ],
 )
