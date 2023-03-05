@@ -57,15 +57,15 @@ async def member_ban(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await Man.edit("Saya tidak memiliki izin yang cukup")
+        return await Man.edit("GW GA ADA IZIN DI GRUP INI GOBLOK")
     if not user_id:
-        return await Man.edit("Saya tidak dapat menemukan pengguna tersebut.")
+        return await Man.edit("KIRIM PENGGUNA YANG BENER LOLLLL.")
     if user_id == client.me.id:
-        return await Man.edit("Saya tidak bisa melarang diri saya sendiri.")
+        return await Man.edit("LU MAU BAN DIRI LU SENDIRI MENDING MATI AJA.")
     if user_id in DEVS:
-        return await Man.edit("Saya tidak bisa melarang pengembang saya!")
+        return await Man.edit("LU SIAPA MAU BAN BAGINDA GW INI KONTOLLLL!")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await Man.edit("Saya tidak bisa melarang admin, Anda tahu aturannya, begitu juga saya.")
+        return await Man.edit("DIA ADMIN DI SINI TOLOL NGAPAIN MAU LU BAN IDIOT BIADAB MUSNAH LU.")
     try:
         mention = (await client.get_users(user_id)).mention
     except IndexError:
@@ -93,9 +93,9 @@ async def member_unban(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await Man.edit("Saya tidak memiliki izin yang cukup")
+        return await Man.edit("GW GA ADA IZIN DI GRUP INI GOBLOK")
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await Man.edit("Anda tidak dapat membatalkan pencekalan saluran")
+        return await Man.edit("LU GABISA NGEBATALIN KEHENDAK LU")
 
     if len(message.command) == 2:
         user = message.text.split(None, 1)[1]
@@ -103,7 +103,7 @@ async def member_unban(client: Client, message: Message):
         user = message.reply_to_message.from_user.id
     else:
         return await Man.edit(
-            "Berikan nama pengguna atau balas pesan pengguna untuk membatalkan pencekalan."
+            "KIRIM NAMA PENGGUNA YANG BENER BIAR BISA GW BUKAIN BAN NYA YA ANAK KAMPANG."
         )
     await message.chat.unban_member(user)
     umention = (await cleint.get_users(user)).mention
@@ -120,7 +120,7 @@ async def pin_message(client: Client, message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_pin_messages:
-        return await Man.edit("Saya tidak memiliki izin yang cukup")
+        return await Man.edit("GW GA ADA IZIN DI GRUP INI GOBLOK")
     r = message.reply_to_message
     if message.command[0][0] == "u":
         await r.unpin()
@@ -142,15 +142,15 @@ async def mute(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await Man.edit("Saya tidak memiliki izin yang cukup")
+        return await Man.edit("GW GA ADA IZIN DI GRUP INI GOBLOK")
     if not user_id:
-        return await Man.edit("Saya tidak dapat menemukan pengguna tersebut.")
+        return await Man.edit("KIRIM NAMA PENGGUNA YANG BENER.")
     if user_id == client.me.id:
-        return await Man.edit("Aku tidak bisa membungkam diriku sendiri.")
+        return await Man.edit("MATI AJA LU KALAU MAU MUTE DIRI LU SENDIRI.")
     if user_id in DEVS:
-        return await Man.edit("Saya tidak bisa membisukan pengembang saya!")
+        return await Man.edit("MAU MUTE BAGINDA GW YANG TERHORMAT LU SIAPA MEMEK!!")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await Man.edit("Saya tidak bisa membisukan admin, Anda tahu aturannya, begitu juga saya.")
+        return await Man.edit("GW GABISA MUTE PARA PETINGGI DISINI, DAN LU JUGA PETINGGIS DISINI MEMEK.")
     mention = (await client.get_users(user_id)).mention
     msg = (
         f"**Muted User:** {mention}\n"
@@ -171,9 +171,9 @@ async def unmute(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await Man.edit("Saya tidak memiliki izin yang cukup")
+        return await Man.edit("GW GA ADA IZIN DI GRUP INI GOBLOK")
     if not user_id:
-        return await Man.edit("Saya tidak dapat menemukan pengguna tersebut.")
+        return await Man.edit("KIRIM NAMA PENGGUNA YANG BENER ANJING.")
     await message.chat.restrict_member(user_id, permissions=unmute_permissions)
     umention = (await client.get_users(user_id)).mention
     await Man.edit(f"Unmuted! {umention}")
@@ -188,15 +188,15 @@ async def kick_user(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await Man.edit("Saya tidak memiliki izin yang cukup")
+        return await Man.edit("GW GA ADA IZIN DI GRUP INI GOBLOK")
     if not user_id:
-        return await Man.edit("Saya tidak dapat menemukan pengguna tersebut.")
+        return await Man.edit("KIRIM NAMA PENGGUNA YANG BENER ANJING.")
     if user_id == client.me.id:
-        return await Man.edit("Aku tidak bisa menendang diriku sendiri.")
+        return await Man.edit("GW TENDANG DIRI LU KE DALEM JURANG HUSSSS.")
     if user_id == DEVS:
-        return await Man.edit("Saya tidak bisa menendang pengembang saya.")
+        return await Man.edit("GW GABISA KICK BAGINDA GW SENDIRI ANJING.")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await Man.edit("Saya tidak bisa menendang admin, Anda tahu aturannya, begitu juga saya.")
+        return await Man.edit("GW GABISA KICK DIA KARNA DIA ADMIN MEMEK DAN JUGA LU.")
     mention = (await client.get_users(user_id)).mention
     msg = f"""
 **Kicked User:** {mention}
