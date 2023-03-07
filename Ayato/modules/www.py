@@ -103,6 +103,31 @@ async def pingme(client: Client, message: Message):
         f"└• **Owner KAMPANG :** {client.me.mention}" % (duration)
     )
     
+    
+    
+@Client.on_message(filters.command(["kping"], ".") & filters.me)
+async def pingme(client: Client, message: Message):
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    xx = await message.reply_text("**『⍟𝐊𝐎𝐍𝐓𝐎𝐋』**")
+    try:
+       await message.delete()
+    except:
+       pass
+    await xx.edit("**◆◈𝐊𝐀𝐌𝐏𝐀𝐍𝐆◈◆**")
+    await xx.edit("**𝐏𝐄𝐂𝐀𝐇𝐊𝐀𝐍 𝐁𝐈𝐉𝐈 𝐊𝐀𝐔 𝐀𝐒𝐔**")
+    await xx.edit("**☬𝐒𝐈𝐀𝐏 𝐊𝐀𝐌𝐏𝐀𝐍𝐆 𝐌𝐄𝐍𝐔𝐌𝐁𝐔𝐊 𝐀𝐒𝐔☬**")
+    await xx.edit("**𝐌𝐀𝐓𝐈 𝐊𝐀𝐔 𝐀𝐍𝐉𝐈𝐍𝐆𝐆**")
+    await xx.edit("**𝐃𝐀𝐒𝐀𝐑 𝐀𝐍𝐀𝐊 𝐊𝐀𝐌𝐏𝐀𝐍𝐆!!**")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await xx.edit(
+        f"❏ **𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙻𝙴𝙳𝚄𝙶!!🐨**\n"
+        f"├• **⫸ ᴷᵒⁿᵗᵒˡ** - `%sms`\n"
+        f"├• **✲ 𝙱𝙸𝙹𝙸 𝙿𝙴𝙻𝙴𝚁** `{uptime}` \n"
+        f"└• **Owner KAMPANG :** {client.me.mention}" % (duration)
+    }
+    
 
 
 @Client.on_message(filters.command("lea", cmd) & filters.me)
@@ -139,6 +164,6 @@ add_command_help(
     "ping",
     [
         ["ping", "Untuk Menunjukkan Ping Bot Anda."],
-        ["Cping", "Untuk Menunjukkan Ping Bot Anda ( PINTER KALAU LU COBA )."],
+        ["Kping", "Untuk Menunjukkan Ping Bot Anda ( PINTER KALAU LU COBA )."],
     ],
 )
