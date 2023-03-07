@@ -82,9 +82,13 @@ async def nearest_dc(client: Client, message: Message):
 )
 @Client.on_message(filters.command(["ping"], ".") & filters.me)
 async def pingme(client: Client, message: Message):
-   uptime = await get_readable_time((time.time() - StartTime))
+    uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await edit_or_reply(message, "**0% ▒▒▒▒▒▒▒▒▒▒**")
+    xx = await message.reply_text("**0% ▒▒▒▒▒▒▒▒▒▒**")
+    try:
+       await message.delete()
+    except:
+       pass
     await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
     await xx.edit("**40% ████▒▒▒▒▒▒**")
     await xx.edit("**60% ██████▒▒▒▒**")
