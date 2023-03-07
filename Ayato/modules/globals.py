@@ -80,13 +80,13 @@ async def gban_user(client: Client, message: Message):
             er += 1
     sql.gban(user.id)
     msg = (
-        r"**\\#GBanned_User//**"
-        f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
+        r"**𝙂𝘽𝙖𝙣𝙣𝙚𝙙 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🐨 𝐁𝐎𝐓 𝐊𝐀𝐌𝐏𝐀𝐍𝐆**"
+        f"\n\n**➢👥 •Username:** [{user.first_name}](tg://user?id={user.id})"
         f"\n**User ID:** `{user.id}`"
     )
     if reason:
-        msg += f"\n**Reason:** `{reason}`"
-    msg += f"\n**Affected To:** `{done}` **Chats**"
+        msg += f"\n**ALASAN:** `{reason}`"
+    msg += f"\n**BERHASIL GBAN ANAK KAMPANG KE:** `{done}` **Chats**"
     await Man.edit(msg)
 
 
@@ -124,13 +124,13 @@ async def ungban_user(client: Client, message: Message):
                 er += 1
         sql.ungban(user.id)
         msg = (
-            r"**\\#UnGbanned_User//**"
-            f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})"
+            r"**𝗨𝗻𝗴𝗕𝗮𝗻𝗻𝗲𝗱 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🐨 𝐁𝐎𝐓 𝐊𝐀𝐌𝐏𝐀𝐍𝐆**"
+            f"\n\n**➢👥 •Username:** [{user.first_name}](tg://user?id={user.id})"
             f"\n**User ID:** `{user.id}`"
         )
         if reason:
-            msg += f"\n**Reason:** `{reason}`"
-        msg += f"\n**Affected To:** `{done}` **Chats**"
+            msg += f"\n**ALASAN:** `{reason}`"
+        msg += f"\n**BERHASIL MENGAMPUNI JAMET KE:** `{done}` **Chats**"
         await Man.edit(msg)
     except Exception as e:
         await Man.edit(f"**ERROR:** `{e}`")
@@ -143,7 +143,7 @@ async def gbanlist(client: Client, message: Message):
     Man = await edit_or_reply(message, "`Processing...`")
     if not users:
         return await Man.edit("BELUM ADA ANAK KAMPANG YANG DI GBAN")
-    gban_list = "**GBanned Users:**\n"
+    gban_list = "**𝙂𝘽𝙖𝙣𝙣𝙚𝙙 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🐨 𝐁𝐎𝐓 𝐊𝐀𝐌𝐏𝐀𝐍𝐆:**\n"
     count = 0
     for i in users:
         count += 1
