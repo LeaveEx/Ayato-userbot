@@ -41,12 +41,12 @@ async def del_msg(client: Client, message: Message):
 )
 @Client.on_message(filters.command("purge", cmd) & filters.me)
 async def purge(client: Client, message: Message):
-    Man = await edit_or_reply(message, "`Starting To Purge Messages!`")
+    Man = await edit_or_reply(message, "`MEMULAI MENGHAPUS KENANGAN!`")
     msg = message.reply_to_message
     if msg:
         itermsg = list(range(msg.id, message.id))
     else:
-        await Man.edit("`Reply To Message To Purge!`")
+        await Man.edit("`Balas di Pesan Goblokk!`")
         return
     count = 0
 
@@ -63,7 +63,7 @@ async def purge(client: Client, message: Message):
             return
 
     done = await Man.edit(
-        f"**Fast Purge Completed!**\n**Berhasil Menghapus** `{str(count)}` **Pesan.**"
+        f"**Berhasil Menghapus Kenangan!!**\n**Sebanyak** `{str(count)}` **Kenangan😭**"
     )
     await asyncio.sleep(2)
     await done.delete()
