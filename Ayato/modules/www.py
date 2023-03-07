@@ -82,22 +82,23 @@ async def nearest_dc(client: Client, message: Message):
 )
 @Client.on_message(filters.command(["ping"], ".") & filters.me)
 async def module_ping(client: Client, message: Message):
-    cmd = message.command
-    help_arg = ""
-    bot_username = (await app.get_me()).username
-    if len(cmd) > 1:
-        help_arg = " ".join(cmd[1:])
-    elif not message.reply_to_message and len(cmd) == 1:
-        try:
-            nice = await client.get_inline_bot_results(bot=bot_username, query="ping")
-            await asyncio.gather(
-                message.delete(),
-                client.send_inline_bot_result(
-                    message.chat.id, nice.query_id, nice.results[0].id
-                ),
-            )
-        except BaseException as e:
-            print(f"{e}")
+   uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    xx = await edit_or_reply(message, "**0% ▒▒▒▒▒▒▒▒▒▒**")
+    await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
+    await xx.edit("**40% ████▒▒▒▒▒▒**")
+    await xx.edit("**60% ██████▒▒▒▒**")
+    await xx.edit("**80% ████████▒▒**")
+    await xx.edit("**100% ██████████**")
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await xx.edit(
+        f"❏ **PONG KAMPANG!!🐨**\n"
+        f"├• **Pinger** - `%sms`\n"
+        f"├• **Uptime -** `{uptime}` \n"
+        f"└• **Owner KAMPANG :** {client.me.mention}" % (duration)
+    ),
+    
 
 
 @Client.on_message(filters.command("lea", cmd) & filters.me)
