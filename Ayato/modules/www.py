@@ -126,7 +126,7 @@ async def pingme(client: Client, message: Message):
         f"├• **⫸ ᴷᵒⁿᵗᵒˡ** - `%sms`\n"
         f"├• **✲ 𝙱𝙸𝙹𝙸 𝙿𝙴𝙻𝙴𝚁** `{uptime}` \n"
         f"└• **Owner KAMPANG :** {client.me.mention}" % (duration)
-    }
+    )
     
 
 
