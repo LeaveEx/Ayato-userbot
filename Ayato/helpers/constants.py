@@ -11,14 +11,14 @@
 class First:
     ALIVE = "`Still Working On Fire 🔥`"
     REPO = """
-**Hey**, __I am using__ 🔥 **Kampang-Userbot** 🔥
-      __Thanks For Using me__
+**HALO ANAK KAMPANG**, KENALIN GW USERBOT PREMIUM DARI 🐨 **Kampang-Userbot** 🐨
+      __MAKASIH ANAK KAMPANG__
 ✣ **Userbot Version :** `{}`
 ✣ **Group Support :** [GRUP SUPPORT](t.me/senzusupp)
-✣ **Channel :** [Support](t.me/idealizerd)
+✣ **Channel :** [UPDATE](t.me/idealizerd)
 ✣ **Owner Repo :** [LeaveEx](t.me/istmeleave)
 ✣ **Repo :** [Kampang-Userbot](https://github.com/LeaveEx/Ayato-userbot)"""
-    CREATOR = 'I was created by my master <a href="https://github.com/LeaveEx/Ayato-Userbot">Leave</a> on a rainy day.'
+    CREATOR = 'SAYA DI BUAT OLEH BAGINDA SAYA <a href="https://github.com/LeaveEx/Ayato-Userbot">Leave</a> KAMPANG KEMBALI YA MEK🐨.'
     MSG_ON = """
 🔥 **Kampang-Userbot Berhasil Di Aktifkan**
 ━━
