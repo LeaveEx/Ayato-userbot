@@ -106,7 +106,7 @@ async def pingme(client: Client, message: Message):
     
     
 @Client.on_message(filters.command(["kping"], ".") & filters.me)
-async def pingme(client: Client, message: Message):
+async def kping(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     xx = await message.reply_text("**『⍟𝐊𝐎𝐍𝐓𝐎𝐋』**")
@@ -122,8 +122,8 @@ async def pingme(client: Client, message: Message):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
-        f"❏ **𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙻𝙴𝙳𝚄𝙶!!🐨**\n"
-        f"├• **⫸ ᴷᵒⁿᵗᵒˡ** - `%sms`\n"
+        f"❏ **PONG KAMPANG!!🐨**\n"
+        f"├• **⫸ Pinger** - `%sms`\n"
         f"├• **✲ 𝙱𝙸𝙹𝙸 𝙿𝙴𝙻𝙴𝚁** `{uptime}` \n"
         f"└• **Owner KAMPANG :** {client.me.mention}" % (duration)
     )
