@@ -115,7 +115,7 @@ async def karman_function(message: Message, answers):
     )
     answers.append(
         InlineQueryResultArticle(
-            title="Leave",
+            title="Lea",
             description="Check Bot's Stats",
             thumb_url="https://telegra.ph/file/da0f79694e2c3d44bdfa3.jpg",
             input_message_content=InputTextMessageContent(
@@ -163,7 +163,7 @@ async def inline_query_handler(client: Client, query):
         elif string_given.startswith("ping"):
             answers = await ping_function(query, answers)
             await client.answer_inline_query(query.id, results=answers, cache_time=5)
-        elif string_given.startswith("faiz"):
+        elif string_given.startswith("lea"):
             answers = await karman_function(query, answers)
             await client.answer_inline_query(query.id, results=answers, cache_time=0)
     except Exception as e:
