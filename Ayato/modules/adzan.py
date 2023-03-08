@@ -3,7 +3,7 @@ import json
 import requests
 
 from pyrogram import Client, filters
-from pyrogram.types import 
+from pyrogram.types import Message
 
 from Ayato import CMD_HANDLER as cmd
 from Ayato.helpers.SQL.globals import gvarstatus
