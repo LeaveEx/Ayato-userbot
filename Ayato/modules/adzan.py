@@ -5,7 +5,7 @@ import requests
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Ayato import CMD_HANDLER as cmd
+from config import CMD_HANDLER as cmd
 from Ayato.helpers.SQL.globals import gvarstatus
 from Ayato.utils import edit_delete, edit_or_reply
 from Ayato.modules.help import add_command_help
