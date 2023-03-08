@@ -14,7 +14,8 @@ from Ayato.modules.help import add_command_help
 @Client.on_message(filters.me & filters.command("adzan", cmd))
 async def adzan_cmd(client: Client, message: Message):
     "Shows you the Islamic prayer times of the given city name"
-    LOKASI = gvarstatus("WEATHER_DEFCITY") or "Jakarta" if not input_str else input_str
+    str = adzan.pattern_match.group(1)
+    LOKASI = gvarstatus("WEATHER_DEFCITY") or "Jakarta" if not str else str
     url = f"http://muslimsalat.com/{LOKASI}.json?key=bd099c5825cbedb9aa934e255a81a5fc"
     request = requests.get(url)
     if request.status_code != 200:
