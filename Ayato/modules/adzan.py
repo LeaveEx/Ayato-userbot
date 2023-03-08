@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 from config import CMD_HANDLER as cmd
 from Ayato.helpers.SQL.globals import gvarstatus
-from Ayato.utils import edit_delete, edit_or_reply
+from Ayato.helpers.basic import edit_or_reply
 from Ayato.modules.help import add_command_help
 
 
@@ -19,7 +19,7 @@ async def get_adzan(adzan):
     url = f"http://muslimsalat.com/{LOKASI}.json?key=bd099c5825cbedb9aa934e255a81a5fc"
     request = requests.get(url)
     if request.status_code != 200:
-        return await edit_delete(
+        return await edit_or-reply(
             adzan, f"**Tidak Dapat Menemukan Kota** `{LOCATION}`", 120
         )
     result = json.loads(request.text)
