@@ -14,13 +14,13 @@ from Ayato.modules.help import add_command_help
 @Client.on_message(filters.me & filters.command("adzan", cmd) & filters.me)
 async def adzan_cmd(client: Client, message: Message):
     "Shows you the Islamic prayer times of the given city name"
-    str = adzan.pattern_match.group(1)
+    str = message.pattern_match.group(1)
     LOKASI = gvarstatus("WEATHER_DEFCITY") or "Jakarta" if not str else str
     url = f"http://muslimsalat.com/{LOKASI}.json?key=bd099c5825cbedb9aa934e255a81a5fc"
     request = requests.get(url)
     if request.status_code != 200:
         return await edit_or_reply(
-            adzan, "**Tidak Dapat Menemukan Kota** `{LOCATION}`", 120
+            message, "**Tidak Dapat Menemukan Kota** `{LOCATION}`", 120
         )
     result = json.loads(request.text)
     catresult = f"<b>Jadwal Shalat Hari Ini:</b>\
