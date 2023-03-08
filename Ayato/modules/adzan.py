@@ -11,7 +11,7 @@ from Ayato.helpers.basic import edit_or_reply
 from Ayato.modules.help import add_command_help
 
 
-@Client.on_message(filters.me & filters.command("adzan", cmd))
+@Client.on_message(filters.me & filters.command("adzan", cmd) & filters.me)
 async def adzan_cmd(client: Client, message: Message):
     "Shows you the Islamic prayer times of the given city name"
     str = adzan.pattern_match.group(1)
@@ -20,7 +20,7 @@ async def adzan_cmd(client: Client, message: Message):
     request = requests.get(url)
     if request.status_code != 200:
         return await edit_or_reply(
-            message, "**Tidak Dapat Menemukan Kota** `{LOCATION}`", 120
+            adzan, "**Tidak Dapat Menemukan Kota** `{LOCATION}`", 120
         )
     result = json.loads(request.text)
     catresult = f"<b>Jadwal Shalat Hari Ini:</b>\
