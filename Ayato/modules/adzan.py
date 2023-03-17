@@ -1,6 +1,7 @@
 import json
 import requests
 
+from Ayato.helpers.SQL.globals import gvarstatus
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import CMD_HANDLER as cmd
