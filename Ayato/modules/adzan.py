@@ -1,16 +1,15 @@
 import json
 import requests
 
-from pyrogram import Client
+from pyrogram import Client filters
 from pyrogram.types import Message
-
+from config import CMD_HANDLER as cmd
 
 from .help import add_command_help
 
-
-@Client.on_message(["adzan"], pass_error=True)
+@Client.on_message(filters.me & filters.command("adzan", cmd) & filters.me)
 async def adzan_shalat(client: Client, message: Message):
-    LOKASI = yins.get_cmd(message)
+    LOKASI = gvarstatus("WEATHER_DEFCITY") or "Jakarta" if not str else str
     if not LOKASI:
         await message.reply("<i>Silahkan Masukkan Nama Kota Anda</i>")
         return True
