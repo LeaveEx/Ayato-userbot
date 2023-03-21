@@ -1,7 +1,6 @@
 import json
 import requests
 
-from Ayato.helpers.SQL.globals import gvarstatus
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import CMD_HANDLER as cmd
@@ -10,7 +9,7 @@ from .help import add_command_help
 
 @Client.on_message(filters.me & filters.command("adzan", cmd) & filters.me)
 async def adzan_shalat(client: Client, message: Message):
-    LOKASI = gvarstatus("WEATHER_DEFCITY") or "Jakarta" if not str else str
+    LOKASI = message.text.split(" ", 1)[1]
     if not LOKASI:
         await message.reply("<i>Silahkan Masukkan Nama Kota Anda</i>")
         return True
