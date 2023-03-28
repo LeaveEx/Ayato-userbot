@@ -84,16 +84,16 @@ async def nearest_dc(client: Client, message: Message):
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    xx = await message.reply_text("**0% ▒▒▒▒▒▒▒▒▒▒**")
+    xx = await message.reply_text("**TOD NGENTOD**")
     try:
        await message.delete()
     except:
        pass
-    await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
-    await xx.edit("**40% ████▒▒▒▒▒▒**")
-    await xx.edit("**60% ██████▒▒▒▒**")
-    await xx.edit("**80% ████████▒▒**")
-    await xx.edit("**100% ██████████**")
+    await xx.edit("**SEDANG MEMUAT PING**")
+    await xx.edit("**SABAR YA ANAK KAMPANG**")
+    await xx.edit("**TUT TUT TUTTTTTTT**")
+    await xx.edit("**SABAR SEBENTAR LAGI KONTOLLL**")
+    await xx.edit("**SELESAI DANNNNNNNNNN DORRRRRR**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
