@@ -4,8 +4,8 @@ from pyrogram import Client as Ayato
 from pyrogram.errors import MessageNotModified
 from Ayato.helpers.basic import *
 from Ayato.helpers.adminHelpers import DEVS
-from config import OPENAI_API_KEY
-from config import CMD_HANDLER as cmd
+from config import *
+from config import OPENAI_API_KEY, CMD_HANDLER as cmd
 from Ayato.utils import *
 
 import requests
